@@ -1,3 +1,3 @@
 # TwSpider
 
-com.csnd --- csdn博客文章
+com.csdn --- csdn博客文章
