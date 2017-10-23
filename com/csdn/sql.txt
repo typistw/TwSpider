@@ -1,0 +1,10 @@
+CREATE TABLE `csdnblog` (
+   `id` int(50) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+   `title` varchar(200) DEFAULT '' COMMENT '标题',
+   `date` varchar(50) DEFAULT '' COMMENT '创建日期',
+   `tags` varchar(50) DEFAULT '' COMMENT '标签',
+   `content` longtext COMMENT '正文',
+   `view` varchar(50) DEFAULT '' COMMENT '阅读数',
+   `copyright` varchar(10) DEFAULT NULL COMMENT '是否原创',
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='`csdnblog`'
