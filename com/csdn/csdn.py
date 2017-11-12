@@ -26,7 +26,7 @@ def getOnePageLinks(user, no=1):
                 if articleUrl not in pageLinks:
                     pageLinks.append(articleUrl)
     except BaseException as e:
-        logging.error('get article link error:',e)
+        logging.error('get article link error:'+ str(e))
 
     return pageLinks
 

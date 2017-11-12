@@ -3,20 +3,10 @@
 
 import pymysql
 import logging; logging.basicConfig(level=logging.INFO)
-
-# 配置化
-config = {
-          'host':'127.0.0.1',
-          'port':3306,
-          'user':'root',
-          'password':'123456',
-          'db':'scraping',
-          'charset':'utf8',
-          'cursorclass':pymysql.cursors.DictCursor,
-          }
+from com.config.dataSourceConfig import dataSourceConfig
 
 #获取连接
-connection = pymysql.connect(**config)
+connection = pymysql.connect(**dataSourceConfig)
 
 def save(title, original, publishDate, view, tagsStr, content):
     cursor = connection.cursor()
@@ -25,6 +15,6 @@ def save(title, original, publishDate, view, tagsStr, content):
         cursor.execute(sql,(title, original, publishDate, view, tagsStr, content))
         connection.commit()
     except Exception as e:
-        logging.error('execute sql',e)
+        logging.error('execute sql'+ str(e))
     finally:
         cursor.close()
