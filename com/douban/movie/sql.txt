@@ -1,0 +1,27 @@
+CREATE TABLE `douban_movie` (
+   `name` varchar(100) NOT NULL,
+   `grade` char(3) DEFAULT NULL,
+   `director` varchar(100) DEFAULT NULL,
+   `scriptwriter` varchar(100) DEFAULT NULL,
+   `actor` text,
+   `area` varchar(50) DEFAULT NULL,
+   `language` varchar(50) DEFAULT NULL,
+   `releaseDate` varchar(100) DEFAULT NULL,
+   `filmTime` varchar(100) DEFAULT NULL,
+   `type` varchar(10) DEFAULT NULL,
+   PRIMARY KEY (`name`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+ CREATE TABLE `douban_movie_two` (
+   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+   `name` varchar(100) DEFAULT NULL,
+   `score` char(3) DEFAULT NULL,
+   `regions` varchar(100) DEFAULT NULL COMMENT '地区',
+   `release_date` char(10) DEFAULT NULL,
+   `vote_count` varchar(20) DEFAULT NULL COMMENT '评价人数',
+   `types` varchar(100) DEFAULT NULL,
+   `actors` text,
+   PRIMARY KEY (`id`),
+   KEY `index_movie_name` (`name`),
+   KEY `index_movie_score` (`score`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=19280 DEFAULT CHARSET=utf8mb4
